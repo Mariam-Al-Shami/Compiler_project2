@@ -9,7 +9,8 @@ import org.antlr.v4.gui.TreeViewer;
 import antlr.*;
 
 public class ShowTree {
-    static String inputPath = "tests/python_test.txt";
+    static String inputPath = "flask_app/app.py";
+//    static String inputPath = "tests/errors_test.py";
     static String startRule = "program";
 
     public static void main(String[] args) {

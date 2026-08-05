@@ -1,0 +1,19 @@
+Code Generation Log
+====================
+[ContextBuilder] Route extracted: products -> /
+[ContextBuilder] Route extracted: add_product -> /add
+[ContextBuilder] Route extracted: product_details -> /product/<int:product_id>
+[ContextBuilder] Route extracted: delete_product -> /delete/<int:product_id>
+[ContextBuilder] Loaded 3 REAL product(s) from live runtime snapshot: flask_app/products.json
+[WARNING] Variable 'request.form.name' not found in GenerationContext
+[WARNING] Variable 'request.form.price' not found in GenerationContext
+[WARNING] Variable 'request.form.details' not found in GenerationContext
+[WARNING] Condition 'error' could not be evaluated (no product in scope); treated as false.
+[Generator] Generated add_product.html (1716 chars).
+[Generator] Generated delete_product_0.html for product id=0 (1421 chars).
+[Generator] Generated delete_product_1.html for product id=1 (1409 chars).
+[Generator] Generated delete_product_2.html for product id=2 (1429 chars).
+[Generator] Generated product_details_0.html for product id=0 (1447 chars).
+[Generator] Generated product_details_1.html for product id=1 (1435 chars).
+[Generator] Generated product_details_2.html for product id=2 (1455 chars).
+[Generator] Generated products.html (1888 chars).

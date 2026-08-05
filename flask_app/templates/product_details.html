@@ -2,22 +2,33 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>{{ product.name }}</title>
+    <title>حذف المنتج</title>
     <style>
         body {
             font-family: Arial, sans-serif; background-color: #f9f9f9;
-            margin: 20px; color: #333;
+            margin: 20px auto; color: #333;
+            max-width: 700px;
         }
         h1, h3 { color: #2c3e50; }
         a { text-decoration: none; color: #3498db; }
         a:hover { text-decoration: underline; }
-        .product-details {
-            background-color: #fff; padding: 20px; border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 400px;
+        button {
+            background-color: #3498db; color: white; border: none;
+            padding: 8px 14px; cursor: pointer; border-radius: 4px;
         }
+        button:hover { background-color: #2980b9; }
+        .delete-box {
+            background-color: #fff3f3; border: 1px solid #e74c3c;
+            padding: 20px; border-radius: 6px; max-width: 400px;
+        }
+        .delete-box h1 { color: #e74c3c; }
+        .btn-delete {
+            background-color: #e74c3c;
+        }
+        .btn-delete:hover { background-color: #c0392b; }
         .btn-back {
             display: inline-block;
-            margin-top: 14px;
+            margin-top: 10px;
             background-color: #3498db;
             color: white;
             padding: 8px 14px;
@@ -27,17 +38,20 @@
     </style>
 </head>
 <body>
-<div class="product-details">
-    <h1>{{ product.name }}</h1>
+<div class="delete-box">
+    <h1>تأكيد الحذف</h1>
+
+    <p>هل أنت متأكد أنك تريد حذف المنتج <strong>{{ product.name }}</strong>؟</p>
 
     {% if product.image %}
-    <img src="{{ url_for('static', filename='uploads/' ~ product.image) }}" width="300" alt="{{ product.name }}">
+    <img src="{{ url_for('static', filename='uploads/' ~ product.image) }}" width="200" alt="{{ product.name }}">
     {% endif %}
 
-    <p><strong>السعر : </strong> {{ product.price }}</p>
-    <p><strong>التفاصيل : </strong><br>{{ product.details }}</p>
+    <form method="post">
+        <button type="submit" class="btn-delete">نعم، احذف</button>
+    </form>
 
-    <a href="{{ url_for('products') }}" class="btn-back">← رجوع إلى القائمة</a>
+    <a href="{{ url_for('products') }}" class="btn-back"> إلغاء، رجوع إلى القائمة</a>
 </div>
 </body>
 </html>
